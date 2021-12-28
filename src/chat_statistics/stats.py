@@ -35,6 +35,7 @@ class ChatStatistics:
         output_dir:Union[str, Path],
         width: int = 800,height: int = 600,
         max_font_size: int = 250,
+        background_color: str = 'white',
         ):
         """Generate a word cloud from the chat data
         :param output_dir: path to output directory for word cload image
@@ -60,7 +61,7 @@ class ChatStatistics:
         wordcloud = WordCloud(
             width=1200, height=1000,
             font_path=str(DATA_DIR / 'BHoma.ttf'),
-            background_color='white',
+            background_color=background_color,
             max_font_size=250,
         ).generate(text_content)
 
